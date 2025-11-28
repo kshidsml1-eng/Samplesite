@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spiritual Landing Page - Mystical Cosmic</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            color: #e0e0ff;
+            overflow-x: hidden;
+        }
+        
+        /* Animated background stars */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+        
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 0;
+            backdrop-filter: blur(10px);
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: #e0e0ff;
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #a78bfa;
+        }
+        
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 0 150px;
+            position: relative;
+        }
+        
+        .hero-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(147, 51, 234, 0.3) 0%, transparent 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            animation: pulse 4s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+            50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.7; }
+        }
+        
+        h1 {
+            font-size: 72px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #fff 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 20px;
+            color: #c4b5fd;
+            margin-bottom: 40px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 18px 45px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.4);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(102, 126, 234, 0.6);
+        }
+        
+        /* Sacred Geometry Section */
+        .sacred-geometry {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 0;
+            gap: 60px;
+        }
+        
+        .geometry-visual {
+            width: 300px;
+            height: 300px;
+            position: relative;
+        }
+        
+        .circle {
+            position: absolute;
+            border: 2px solid rgba(167, 139, 250, 0.3);
+            border-radius: 50%;
+            animation: rotate 20s linear infinite;
+        }
+        
+        .circle-1 { width: 100%; height: 100%; }
+        .circle-2 { width: 80%; height: 80%; top: 10%; left: 10%; animation-direction: reverse; }
+        .circle-3 { width: 60%; height: 60%; top: 20%; left: 20%; }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .content-block {
+            max-width: 500px;
+        }
+        
+        h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        
+        p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #c4b5fd;
+            margin-bottom: 30px;
+        }
+        
+        .learn-more {
+            color: #a78bfa;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+        }
+        
+        .learn-more:hover {
+            gap: 15px;
+        }
+        
+        /* Features Grid */
+        .features {
+            padding: 100px 0;
+        }
+        
+        .features h2 {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(167, 139, 250, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(167, 139, 250, 0.4);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        
+        .feature-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        
+        .feature-card p {
+            font-size: 16px;
+            color: #c4b5fd;
+        }
+        
+        /* CTA Section */
+        .final-cta {
+            text-align: center;
+            padding: 100px 0;
+            background: radial-gradient(circle at center, rgba(147, 51, 234, 0.2) 0%, transparent 70%);
+        }
+        
+        .final-cta h2 {
+            margin-bottom: 30px;
+        }
+        
+        /* Footer */
+        footer {
+            border-top: 1px solid rgba(167, 139, 250, 0.2);
+            padding: 40px 0;
+            text-align: center;
+            color: #8b7fc0;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: #8b7fc0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #a78bfa;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 48px; }
+            .sacred-geometry { flex-direction: column; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    
+    <div class="container">
+        <!-- Navigation -->
+        <nav>
+            <div class="logo">✨ Luminara</div>
+            <ul class="nav-links">
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#offerings">OFFERINGS</a></li>
+                <li><a href="#connect">CONNECT</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-glow"></div>
+            <h1>Awaken Your<br>Inner Light</h1>
+            <p class="subtitle">A journey into consciousness and cosmic connection</p>
+            <a href="#" class="cta-button">Begin Your Journey</a>
+        </section>
+        
+        <!-- Sacred Geometry Section -->
+        <section class="sacred-geometry">
+            <div class="geometry-visual">
+                <div class="circle circle-1"></div>
+                <div class="circle circle-2"></div>
+                <div class="circle circle-3"></div>
+            </div>
+            <div class="content-block">
+                <h2>Sacred Wisdom</h2>
+                <p>Discover ancient practices merged with modern consciousness. Our approach honors timeless spiritual traditions while embracing contemporary understanding.</p>
+                <a href="#" class="learn-more">Explore Further →</a>
+            </div>
+        </section>
+        
+        <!-- Features Section -->
+        <section class="features" id="offerings">
+            <h2>Your Path Unfolds</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌙</div>
+                    <h3>Guided Meditation</h3>
+                    <p>Journey through cosmic landscapes and inner realms with carefully crafted meditative experiences.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⭐</div>
+                    <h3>Energy Healing</h3>
+                    <p>Align your chakras and harmonize your energy field through ancient healing modalities.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔮</div>
+                    <h3>Spiritual Guidance</h3>
+                    <p>Receive personalized insights and direction on your unique spiritual journey.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Final CTA -->
+        <section class="final-cta" id="connect">
+            <h2>Ready to Transform?</h2>
+            <p>Join thousands on the path to deeper consciousness</p>
+            <a href="#" class="cta-button">Start Today</a>
+        </section>
+        
+        <!-- Footer -->
+        <footer>
+            <ul class="footer-links">
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <p>© 2024 Luminara. All rights reserved.</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Generate random stars
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            starsContainer.appendChild(star);
+        }
+    </script>
+</body>
+</html>
